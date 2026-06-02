@@ -1,0 +1,167 @@
+/* --- Configurações Reset e Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #2e7d32; /* Verde Agro */
+    --secondary-color: #81c784; /* Verde Claro */
+    --dark-color: #212529; /* Grafite escuro */
+    --light-color: #f8f9fa; /* Fundo claro */
+    --accent-color: #d35400; /* Toque de terra/laranja */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--dark-color);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho & Menu --- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.logo i {
+    color: var(--primary-color);
+}
+
+.logo span span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-nav {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background 0.3s !important;
+}
+
+.btn-nav:hover {
+    background-color: #1b5e20;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* --- Seção Hero --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-2px);
+    background-color: #b33900;
+}
+
+/* --- Seção de Cards (Pilares) --- */
+.cards-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba
