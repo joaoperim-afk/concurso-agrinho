@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fa-solid fa-seedling"></i> <span>Agro<span>Sustentável</span></span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#sobre">O Equilíbrio</a></li>
+                    <li><a href="#contato" class="btn-nav">Engaje-se</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente. Descubra como a tecnologia e a natureza caminham juntas.</p>
+            <a href="#pilares" class="btn-main">Conhecer Pilares</a>
+        </div>
+    </section>
+
+    <section id="pilares" class="cards-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Pilares para o Futuro</h2>
+            <p class="section-subtitle">Produzir mais, impactando menos. Essa é a nossa meta.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-tractor"></i></div>
+                    <h3>Agricultura de Precisão</h3>
+                    <p>Uso de dados, drones e IoT para otimizar o uso de água, fertilizantes e solo, reduzindo desperdícios drasticamente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-tree"></i></div>
+                    <h3>Reflorestamento Integrado</h3>
+                    <p>Sistemas ILPF (Integração Lavoura-Pecuária-Floresta) que recuperam o solo e neutralizam as emissões de carbono.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>Manejo Hídrico</h3>
+                    <p>Técnicas avançadas de irrigação gotejada e captação de água da chuva para preservar nossos recursos mais preciosos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2>Alimentar o Mundo Preservando a Terra</h2>
+                <p>A segurança alimentar mundial depende de um Agro forte. No entanto, a força do campo só se mantém viva se a terra e a biodiversidade forem respeitadas.</p>
+                <p>Adotar práticas sustentáveis não é mais uma escolha, mas o único caminho viável para garantir a rentabilidade do produtor e a saúde do planeta para as próximas gerações.</p>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <p>Tecnologia & Natureza em Sincronia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+        <div class="container form-container">
+            <h2>Faça Parte Dessa Mudança</h2>
+            <p>Assine nossa newsletter para receber conteúdos sobre inovações sustentáveis no agronegócio.</p>
+            
+            <form id="agro-form">
+                <div class="form-group">
+                    <input type="text" id="nome" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Seu Melhor E-mail" required>
+                </div>
+                <button type="submit" class="btn-submit">Inscrever-se</button>
+            </form>
+            <div id="form-message" class="hidden"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
