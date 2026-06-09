@@ -15,9 +15,11 @@
                 <i class="fa-solid fa-seedling"></i> <span>Agro<span>Sustentável</span></span>
             </div>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#metricas">Impacto</a></li>
                     <li><a href="#sobre">O Equilíbrio</a></li>
                     <li><a href="#contato" class="btn-nav">Engaje-se</a></li>
                 </ul>
@@ -61,6 +63,55 @@
         </div>
     </section>
 
+    <section id="tecnologias" class="tabs-section">
+        <div class="container">
+            <h2 class="section-title">Tecnologia Aplicada na Prática</h2>
+            <p class="section-subtitle">Selecione o segmento abaixo para ver as inovações em cada setor.</p>
+            
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="all">Todos</button>
+                <button class="tab-btn" data-target="graos">Grãos & Cereais</button>
+                <button class="tab-btn" data-target="pecuaria">Pecuária Verde</button>
+                <button class="tab-btn" data-target="horti">Hortifrúti</button>
+            </div>
+
+            <div class="tabs-content-wrapper">
+                <div class="tab-content" data-category="graos">
+                    <h3>Sensores de Solo e Nitrogênio</h3>
+                    <p>Análise em tempo real do solo para aplicação cirúrgica de nutrientes, evitando a contaminação de lençóis freáticos.</p>
+                </div>
+                <div class="tab-content" data-category="pecuaria">
+                    <h3>Rastreamento e Pastoreio Rotacionado</h3>
+                    <p>Uso de cercas virtuais e monitoramento por satélite para otimizar as pastagens, combatendo a degradação do solo.</p>
+                </div>
+                <div class="tab-content" data-category="horti">
+                    <h3>Estufas Automatizadas e Hidroponia</h3>
+                    <p>Sistemas verticais urbanos e rurais que reduzem em até 90% o consumo de água comparado ao cultivo tradicional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metricas" class="metrics-section">
+        <div class="container grid-metrics">
+            <div class="metric-item">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <div class="count" data-target="35">0</div>
+                <p>% Redução de CO₂</p>
+            </div>
+            <div class="metric-item">
+                <i class="fa-solid fa-faucet-drip"></i>
+                <div class="count" data-target="40">0</div>
+                <p>% Economia de Água</p>
+            </div>
+            <div class="metric-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <div class="count" data-target="25">0</div>
+                <p>% Aumento de Safra</p>
+            </div>
+        </div>
+    </section>
+
     <section id="sobre" class="about-section">
         <div class="container about-grid">
             <div class="about-text">
@@ -82,16 +133,16 @@
             <h2>Faça Parte Dessa Mudança</h2>
             <p>Assine nossa newsletter para receber conteúdos sobre inovações sustentáveis no agronegócio.</p>
             
-            <form id="agro-form">
+            <form id="contactForm">
                 <div class="form-group">
-                    <input type="text" id="nome" placeholder="Seu Nome" required>
+                    <input type="text" id="name" placeholder="Seu Nome" required>
                 </div>
                 <div class="form-group">
                     <input type="email" id="email" placeholder="Seu Melhor E-mail" required>
                 </div>
                 <button type="submit" class="btn-submit">Inscrever-se</button>
             </form>
-            <div id="form-message" class="hidden"></div>
+            <div id="formResponse" class="form-message hidden"></div>
         </div>
     </section>
 
@@ -99,9 +150,9 @@
         <div class="container footer-content">
             <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </footer>
