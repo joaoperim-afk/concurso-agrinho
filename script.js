@@ -1,4 +1,3 @@
-// Aguarda o DOM carregar completamente
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initTabs();
@@ -27,11 +26,9 @@ function initTabs() {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-target");
 
-      // Atualiza classe ativa dos botões
       tabButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Filtra os conteúdos com efeito visual básico
       tabContents.forEach(content => {
         const category = content.getAttribute("data-category");
         
@@ -48,7 +45,7 @@ function initTabs() {
 // 2. CONTADORES ANIMADOS (Métricas com Intersection Observer)
 function initCounters() {
   const counters = document.querySelectorAll(".count");
-  const speed = 60; // Fator de velocidade da animação
+  const speed = 60; 
 
   const startAnimation = (counter) => {
     const target = +counter.getAttribute("data-target");
@@ -68,12 +65,11 @@ function initCounters() {
     updateCount();
   };
 
-  // Ativa animação somente ao rolar a tela até a seção
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         startAnimation(entry.target);
-        observer.unobserve(entry.target); // Executa apenas uma vez
+        observer.unobserve(entry.target); 
       }
     });
   }, { threshold: 0.5 });
@@ -81,7 +77,7 @@ function initCounters() {
   counters.forEach(counter => observer.observe(counter));
 }
 
-// 3. FORMULÁRIO DE NEWSLETTER (Validação e Feedback)
+// 3. FORMULÁRIO DE NEWSLETTER
 function initForm() {
   const form = document.getElementById("contactForm");
   const responseMessage = document.getElementById("formResponse");
@@ -94,12 +90,11 @@ function initForm() {
       const email = document.getElementById("email").value.trim();
 
       if (name && email) {
-        // Simulação de envio com sucesso
         responseMessage.textContent = `Obrigado, ${name}! Inscrição realizada com sucesso.`;
         responseMessage.className = "form-message success";
         form.reset();
       } else {
-        responseMessage.textContent = "Por favor, preencha todos os campos corretamente.";
+        responseMessage.textContent = "Por favor, preencha todos os campos.";
         responseMessage.className = "form-message error";
       }
     });
