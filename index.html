@@ -41,23 +41,26 @@
     <section id="pilares" class="cards-section">
         <div class="container">
             <h2 class="section-title">Nossos Pilares para o Futuro</h2>
-            <p class="section-subtitle">Produzir mais, impactando menos. Essa é a nossa meta.</p>
+            <p class="section-subtitle">Produzir mais, impactando menos. Clique nos pilares para ver dados de especialistas.</p>
             
             <div class="grid-cards">
-                <div class="card">
+                <div class="card clickable-card" data-expert="precisao">
                     <div class="card-icon"><i class="fa-solid fa-tractor"></i></div>
                     <h3>Agricultura de Precisão</h3>
                     <p>Uso de dados, drones e IoT para otimizar o uso de água, fertilizantes e solo, reduzindo desperdícios drasticamente.</p>
+                    <span class="read-more">Ver parecer técnico <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-                <div class="card">
+                <div class="card clickable-card" data-expert="ilpf">
                     <div class="card-icon"><i class="fa-solid fa-tree"></i></div>
                     <h3>Reflorestamento Integrado</h3>
                     <p>Sistemas ILPF (Integração Lavoura-Pecuária-Floresta) que recuperam o solo e neutralizam as emissões de carbono.</p>
+                    <span class="read-more">Ver parecer técnico <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-                <div class="card">
+                <div class="card clickable-card" data-expert="hidrico">
                     <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
                     <h3>Manejo Hídrico</h3>
                     <p>Técnicas avançadas de irrigação gotejada e captação de água da chuva para preservar nossos recursos mais preciosos.</p>
+                    <span class="read-more">Ver parecer técnico <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
@@ -76,38 +79,49 @@
             </div>
 
             <div class="tabs-content-wrapper">
-                <div class="tab-content" data-category="graos">
+                <div class="tab-content clickable-tab" data-category="graos" data-expert="graos-esp">
                     <h3>Sensores de Solo e Nitrogênio</h3>
                     <p>Análise em tempo real do solo para aplicação cirúrgica de nutrientes, evitando a contaminação de lençóis freáticos.</p>
+                    <span class="read-more-tab">Por que isso é essencial? Clique aqui.</span>
                 </div>
-                <div class="tab-content" data-category="pecuaria">
+                <div class="tab-content clickable-tab" data-category="pecuaria" data-expert="pecuaria-esp">
                     <h3>Rastreamento e Pastoreio Rotacionado</h3>
                     <p>Uso de cercas virtuais e monitoramento por satélite para otimizar as pastagens, combatendo a degradação do solo.</p>
+                    <span class="read-more-tab">Por que isso é essencial? Clique aqui.</span>
                 </div>
-                <div class="tab-content" data-category="horti">
+                <div class="tab-content clickable-tab" data-category="horti" data-expert="horti-esp">
                     <h3>Estufas Automatizadas e Hidroponia</h3>
                     <p>Sistemas verticais urbanos e rurais que reduzem em até 90% o consumo de água comparado ao cultivo tradicional.</p>
+                    <span class="read-more-tab">Por que isso é essencial? Clique aqui.</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="metricas" class="metrics-section">
-        <div class="container grid-metrics">
-            <div class="metric-item">
-                <i class="fa-solid fa-cloud-arrow-down"></i>
-                <div class="count" data-target="35">0</div>
-                <p>% Redução de CO₂</p>
-            </div>
-            <div class="metric-item">
-                <i class="fa-solid fa-faucet-drip"></i>
-                <div class="count" data-target="40">0</div>
-                <p>% Economia de Água</p>
-            </div>
-            <div class="metric-item">
-                <i class="fa-solid fa-chart-line"></i>
-                <div class="count" data-target="25">0</div>
-                <p>% Aumento de Safra</p>
+        <div class="container">
+            <h2 class="metrics-title">Simulador de Impacto Ecológico</h2>
+            <p class="metrics-subtitle">Ajuste os controles manuais para medir e projetar as amplitudes das metas ecológicas</p>
+            
+            <div class="grid-metrics">
+                <div class="metric-item">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                    <div class="count" id="count-co2">35</div>
+                    <p>% Redução de CO₂</p>
+                    <input type="range" min="0" max="100" value="35" class="amplitude-slider" data-target="count-co2">
+                </div>
+                <div class="metric-item">
+                    <i class="fa-solid fa-faucet-drip"></i>
+                    <div class="count" id="count-agua">40</div>
+                    <p>% Economia de Água</p>
+                    <input type="range" min="0" max="100" value="40" class="amplitude-slider" data-target="count-agua">
+                </div>
+                <div class="metric-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div class="count" id="count-safra">25</div>
+                    <p>% Aumento de Safra</p>
+                    <input type="range" min="0" max="100" value="25" class="amplitude-slider" data-target="count-safra">
+                </div>
             </div>
         </div>
     </section>
@@ -156,6 +170,14 @@
             </div>
         </div>
     </footer>
+
+    <div id="expertModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
