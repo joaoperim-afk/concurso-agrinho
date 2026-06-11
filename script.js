@@ -14,32 +14,30 @@ function initMobileMenu() {
   if (mobileMenu && navLinks) {
     mobileMenu.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      mobileMenu.classList.toggle("toggle-open");
     });
   }
 }
 
-// 1. FILTRO DINÂMICO DE PILARES (Abas)
+// 1. FILTRO DINÂMICO DE TECNOLOGIAS (Abas)
 function initTabs() {
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".tab-content");
 
   tabButtons.forEach(button => {
     button.addEventListener("click", () => {
-      const targetCategory = button.getAttribute("data-target");
+      const target = button.getAttribute("data-target");
 
       // Atualiza classe ativa dos botões
       tabButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Filtra o conteúdo com transição suave
+      // Filtra os conteúdos com efeito visual básico
       tabContents.forEach(content => {
         const category = content.getAttribute("data-category");
-        if (targetCategory === "all" || category === targetCategory) {
+        
+        if (target === "all" || target === category) {
           content.style.display = "block";
-          setTimeout(() => { content.style.opacity = "1"; }, 50);
         } else {
-          content.style.opacity = "0";
           content.style.display = "none";
         }
       });
@@ -47,21 +45,21 @@ function initTabs() {
   });
 }
 
-// 2. CONTADOR ANIMADO (Efeito de números crescendo)
+// 2. CONTADORES ANIMADOS (Métricas com Intersection Observer)
 function initCounters() {
   const counters = document.querySelectorAll(".count");
-  const speed = 100; // Ajustado para animação mais fluida
+  const speed = 60; // Fator de velocidade da animação
 
-  const startCounting = (counter) => {
+  const startAnimation = (counter) => {
     const target = +counter.getAttribute("data-target");
     let count = 0;
+    const increment = target / speed;
     
     const updateCount = () => {
-      const inc = target / speed;
+      count += increment;
       if (count < target) {
-        count += inc;
         counter.innerText = Math.ceil(count);
-        setTimeout(updateCount, 15);
+        setTimeout(updateCount, 25);
       } else {
         counter.innerText = target;
       }
@@ -70,44 +68,40 @@ function initCounters() {
     updateCount();
   };
 
-  // Detecta quando a seção de dados aparece na tela para iniciar a animação
-  const observer = new IntersectionObserver((entries) => {
+  // Ativa animação somente ao rolar a tela até a seção
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const counter = entry.target;
-        startCounting(counter);
-        observer.unobserve(counter); // Roda a animação apenas uma vez
+        startAnimation(entry.target);
+        observer.unobserve(entry.target); // Executa apenas uma vez
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.5 });
 
   counters.forEach(counter => observer.observe(counter));
 }
 
-// 3. VALIDAÇÃO DO FORMULÁRIO DE CONTATO
+// 3. FORMULÁRIO DE NEWSLETTER (Validação e Feedback)
 function initForm() {
   const form = document.getElementById("contactForm");
-  const formResponse = document.getElementById("formResponse");
+  const responseMessage = document.getElementById("formResponse");
 
-  if (!form || !formResponse) return;
+  if (form && responseMessage) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Impede o envio real / recarregamento da página
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
 
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-
-    if (!nameInput || !emailInput) return;
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-
-    if (name === "" || email === "") {
-      showResponse("Por favor, preencha todos os campos.", "error");
-      return;
-    }
-
-    // Simulando envio bem-sucedido
-    showResponse(`Obrigado, ${name}! Sua inscrição foi realizada com sucesso.`, "success");
-    form.reset();
-  });
+      if (name && email) {
+        // Simulação de envio com sucesso
+        responseMessage.textContent = `Obrigado, ${name}! Inscrição realizada com sucesso.`;
+        responseMessage.className = "form-message success";
+        form.reset();
+      } else {
+        responseMessage.textContent = "Por favor, preencha todos os campos corretamente.";
+        responseMessage.className = "form-message error";
+      }
+    });
+  }
+}
